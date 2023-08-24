@@ -29,7 +29,7 @@ sudo sed -i.bak -e '/^\[main\]/aauth-polkit=false' /etc/NetworkManager/NetworkMa
 sudo touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
 echo "[keyfile]" | sudo tee -a /etc/NetworkManager/conf.d/10-globally-managed-devices.conf >/dev/null
 echo "unmanaged-devices=*,except:type:wifi,except:type:gsm,except:type:cdma,except:type:wwan,except:type:ethernet,type:vlan" | sudo tee -a /etc/NetworkManager/conf.d/10-globally-managed-devices.conf >/dev/null
-sudo service network-manager restart
+sudo service NetworkManager restart
 
 ## mavlink-router
 ./build_mavlinkrouter.sh
