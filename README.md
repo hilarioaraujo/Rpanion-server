@@ -52,7 +52,7 @@ to configure and install Rpanion-server with all required dependencies. Note thi
 an initial Wifi hotspot.
 
 ```
-cd ./deploy && ./RasPi2-3-4-deploy.sh
+cd ./Rpanion-server/deploy && ./RasPi2-3-4-deploy.sh
 ```
 
 If running Ubuntu 20.04 OS on the Pi, use:
@@ -73,7 +73,7 @@ For the Raspberry Pi Zero W(1), run the below command on a fresh Raspberry Pi OS
 to configure and install Rpanion-server. Note this does configure an initial Wifi hotspot.
 
 ```
-cd ./deploy && ./RasPiZero-deploy.sh
+cd ./Rpanion-server/deploy && ./RasPiZero-deploy.sh
 ```
 
 If not already configured for an initial Wifi hotspot, run the ``./deploy/wifi_access_point.sh`` script.
@@ -143,7 +143,7 @@ to configure and install Rpanion-server and all required dependencies. Note this
 configure an initial Wifi hotspot.
 
 ```
-cd ./deploy && ./jetson-deploy.sh
+cd ./Rpanion-server/deploy && ./jetson-deploy.sh
 ```
 
 ### Automatic (Libre Computer AML-S905X-CC aka 'Le Potato')
@@ -153,7 +153,7 @@ to configure and install Rpanion-server and all required dependencies. Note this
 configure an initial Wifi hotspot.
 
 ```
-cd ./deploy && ./RasPi2-3-4-deploy.sh
+cd ./Rpanion-server/deploy && ./RasPi2-3-4-deploy.sh
 ```
 
 If using a usb to serial converter, you might need to modify permissions of the device.
@@ -167,7 +167,11 @@ sudo chmod 666 /dev/ttyACM0
 **Persistent device permission update**
 
 Follow the steps on this site for your specific device:
-https://www.xmodulo.com/change-usb-device-permission-linux.html
+[https://www.xmodulo.com/change-usb-device-permission-linux.html](https://www.baeldung.com/linux/serial-ports-without-root)
+
+```
+sudo usermod -a -G dialout $USER
+```
 
 ### Automatic (x86 boards and laptops)
 
@@ -176,7 +180,7 @@ to configure and install Rpanion-server and all required dependencies. Note this
 configure an initial Wifi hotspot.
 
 ```
-cd ./deploy && ./x86-ubuntu20-deploy.sh
+cd ./Rpanion-server/deploy && ./x86-ubuntu20-deploy.sh
 ```
 
 ### Updating
@@ -192,7 +196,7 @@ If running Rpanion-server as a service, ensure to restart the service.
 An automatic update script performed via:
 
 ```
-./deploy/upgrade.sh
+./Rpanion-server/deploy/upgrade.sh
 ```
 
 ## Building and Running in production mode
