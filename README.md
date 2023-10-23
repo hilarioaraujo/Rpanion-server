@@ -50,7 +50,7 @@ cd ~/ && git clone --recursive https://github.com/hilarioaraujo/Rpanion-server.g
 If running Ubuntu 22.04 OS on the Pi, use:
 
 ```
-cd ~/Rpanion-server/deploy/ && ./RasPi-ubuntu22-deploy.sh
+cd ~/Rpanion-server/deploy/ && sudo bash ./RasPi-ubuntu22-deploy.sh
 ```
 
 Note the CSI camera does not currently work on Ubuntu 22.04, due to incompatibilities with the Raspberry Pi.
@@ -71,7 +71,7 @@ configure an initial Wifi hotspot.
 cd ./Rpanion-server/deploy && ./jetson-deploy.sh
 ```
 
-### Automatic (x86 boards and laptops)
+### Automatic (x86 boards and laptops like Latte Panda)
 
 For any x86 based modules or laptops, run the following script
 to configure and install Rpanion-server and all required dependencies. Note this does not
@@ -177,6 +177,7 @@ Use ``npm version minor`` to create a new release.
 
 To produce a disk image from a SD card, insert the card and run ``./deploy/create_image.sh``.
 
+
 ## Running as a Service
 
 To have Rpanion-server running on automatically on boot, there is an included systemd service file.
@@ -189,11 +190,12 @@ sudo systemctl enable rpanion.service
 ```
 
 
-## Change Ethernet IP
+## Change Ethernet IP in linux:
 
 sudo nano /etc/netplan/*.yaml
 
 https://linuxhint.com/change-ip-address-ubuntu/
+
 
  ethernets:
       eth0:
